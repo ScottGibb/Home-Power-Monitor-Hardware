@@ -1,0 +1,73 @@
+name: KiCad
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_call:
+
+jobs:
+  kicad:
+    name: KiCad Actions (${{ matrix.project }})
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        include:
+          - project: home_power_monitor_hardware
+            schematic: home_power_monitor_hardware/home_power_monitor_hardware.kicad_sch
+            pcb: home_power_monitor_hardware/home_power_monitor_hardware.kicad_pcb
+
+          - project: power_monitor_protection
+            schematic: power_monitor_protection/power_monitor_protection.kicad_sch
+            pcb: power_monitor_protection/power_monitor_protection.kicad_pcb
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v7
+        with:
+          submodules: recursive
+
+      - name: Run KiCad actions
+        uses: actions-for-kicad/kicad-actions@v2-k10.0.2
+        with:
+          schematic_file_name: ${{ matrix.schematic }}
+          pcb_file_name: ${{ matrix.pcb }}
+
+          run_erc: true
+          run_drc: true
+
+          schematic_output_pdf: true
+          schematic_output_svg: true
+          schematic_output_bom: true
+        #   pcb_output_gerbers_and_drill: true
+
+      - name: Upload schematic
+        uses: actions/upload-artifact@v7
+        with:
+          name: schematic-${{ matrix.project }}
+          path: ./schematic.pdf
+
+      - name: Upload ERC report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: erc-${{ matrix.project }}
+          path: ./erc.rpt
+          if-no-files-found: warn
+
+      - name: Upload BOM
+        uses: actions/upload-artifact@v7
+        with:
+          name: bom-${{ matrix.project }}
+          path: ./bom.csv
+          if-no-files-found: warn
+
+    #   - name: Upload Gerbers
+    #     if: always()
+    #     uses: actions/upload-artifact@v7
+    #     with:
+    #       name: gerbers-${{ matrix.project }}
+    #       path: ./gerbers
+    #       if-no-files-found: warn
