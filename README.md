@@ -13,6 +13,8 @@ This repository contains the KiCad hardware designs for the [Home Power Monitor 
 - An LCD Control Unit
 - An Isolated Conversion Board between the Host Processor and the JSY-MK-194 Power Sensor
 
+For more details on the prototype build, see the [prototyping notes](./docs/PROTOTYPING.md).
+
 ## Components
 
 ### LCD Control Unit
@@ -25,7 +27,7 @@ The `power_monitor_protection` project is the interface and protection board. It
 
 ### External Libraries
 
-The [libraries](./libraries/) directory contains external footprints and symbols for the project.
+The [`./libraries/`](./libraries/) directory contains the external footprints and symbols used by the project.
 
 ## Working With the Designs
 
@@ -34,7 +36,7 @@ Open either KiCad project directly in KiCad:
 - `./lcd_control_unit/lcd_control_unit.kicad_pro`
 - `./power_monitor_protection/power_monitor_protection.kicad_pro`
 
-The custom library content used by the protection board is stored in `./libraries/`.
+The custom library content used by the protection board is stored in [`./libraries/`](./libraries/).
 
 ## Automation
 
@@ -56,3 +58,8 @@ Due to funding, PCB layouts were never produced for these schematics. This was l
 
 - [Home Power Monitor Software Repository](https://github.com/ScottGibb/Home-Power-Monitor)
 - [KiCad](https://www.kicad.org/)
+- [AM312 PIR Sensor](https://www.amazon.co.uk/Sensor-Motion-Outdoor-Pyroelectric-Infrared/dp/B0BY7QQ3LX)
+- [WC1602A 16x2 LCD Screen](https://www.amazon.co.uk/sourcing-map-Display-Backlight-Interface/dp/B0DSFR7GZ1/ref=sr_1_5?crid=2GEE32FK7YLKS&dib=eyJ2IjoiMSJ9.6cgkXtVrs6QO7KbueDc_Q8g0wwjGAx1K2kBlkmHrGFi8Kd_AFckG5ZycEwGkVj2SLrNkDCulMN-G-dL5X74VrZLTHdHZDzEbV5wcqyKqUMZO2Zr5YGzEVQDsA0WOYL3Y7Szm3EbprEXihGhl4wFlvAuli3Y8uTzu-LmMYMDLA_UdxEwpj0ElsTbmSOXjVih9xeBGH-hmMJ8Pfgmn8J9tIAwTcnetifRADzOj0RYeWnhawOmFOoskjKLDViepO9cMkFbmNIO2q3pi-5HwaywWaXMeANJSD0mSaAf9_EeDoW4.8zvibMO9_k4edjQzDyliyUygZYEio5CPIBom889MZG0&dib_tag=se&keywords=16x02%2Blcd%2Bscreen&qid=1783540433&sprefix=16x02%2Blcd%2Bscreen%2Caps%2C111&sr=8-5&th=1)
+- [Buttons](https://www.amazon.co.uk/dp/B07QL1BC23?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_4)
+- [5V-3.3V Isolated Power Supply](https://www.aliexpress.com/item/1005004175798333.html?spm=a2g0o.order_list.order_list_main.5.22eb1802wMyzEk)
+- [JSY-MK-194G Power Monitor](https://www.aliexpress.com/item/1005007369940517.html?spm=a2g0o.order_list.order_list_main.30.22eb1802wMyzEk)
