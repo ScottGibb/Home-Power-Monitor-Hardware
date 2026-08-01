@@ -47,7 +47,7 @@ jobs:
           submodules: recursive
 
       - name: Generate KiCad outputs (${{ matrix.name }})
-        uses: actions-for-kicad/kicad-actions@v2-k10.0.2
+        uses: actions-for-kicad/kicad-actions@v2-k10.0.5
         with:
           schematic_file_name: ${{ matrix.schematic }}
           pcb_file_name: ${{ matrix.pcb }}
