@@ -31,7 +31,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SIP4_B_S-1WR3_MNS"
+		(property "Footprint" "DCDC:SIP4_B_S-1WR3_MNS"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -60,16 +60,6 @@
 			(show_name no)
 			(do_not_autoplace no)
 			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "ki_locked" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
