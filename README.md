@@ -4,6 +4,8 @@
 [![KiCad](https://github.com/ScottGibb/Home-Power-Monitor-Hardware/actions/workflows/kicad.yaml/badge.svg)](https://github.com/ScottGibb/Home-Power-Monitor-Hardware/actions/workflows/kicad.yaml)
 [![Release Please](https://github.com/ScottGibb/Home-Power-Monitor-Hardware/actions/workflows/release-please.yaml/badge.svg)](https://github.com/ScottGibb/Home-Power-Monitor-Hardware/actions/workflows/release-please.yaml)
 
+![langauges and tools](./docs/languages_and_tools.drawio.svg)
+
 TODO: Picture of Final Hardware Goes Here
 
 ## Summary
