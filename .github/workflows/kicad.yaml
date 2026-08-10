@@ -35,6 +35,12 @@ jobs:
           schematic_file_name: ${{ matrix.schematic }}
           pcb_file_name: ${{ matrix.pcb }}
 
+          symbol_libraries: |
+            libraries/ul_B0505S-1WR3/2026-06-24_20-18-09.kicad_sym
+
+          footprint_libraries: |
+            libraries/ul_B0505S-1WR3/footprints.pretty/
+
           run_erc: true
           run_drc: true
 
