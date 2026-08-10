@@ -36,7 +36,7 @@ jobs:
           pcb_file_name: ${{ matrix.pcb }}
 
           run_erc: true
-          run_drc: true
+          # run_drc: true # No PCBS are made for this project
 
           schematic_output_pdf: true
           schematic_output_svg: true
