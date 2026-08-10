@@ -53,12 +53,12 @@ jobs:
           pcb_file_name: ${{ matrix.pcb }}
 
           run_erc: true
-          run_drc: true
+          # run_drc: true # No PCBs
 
           schematic_output_pdf: true
           schematic_output_svg: true
           schematic_output_bom: true
-          pcb_output_gerbers_and_drill: true
+          # pcb_output_gerbers_and_drill: true
 
       # -----------------------------
       # Rename outputs to avoid collisions
@@ -76,7 +76,7 @@ jobs:
 
           # ERC/DRC reports
           mv erc.rpt release-assets/${{ matrix.name }}-erc.rpt || true
-          mv drc.rpt release-assets/${{ matrix.name }}-drc.rpt || true
+          # mv drc.rpt release-assets/${{ matrix.name }}-drc.rpt || true
 
           # Gerbers (zip if present)
           if [ -d gerbers ]; then
