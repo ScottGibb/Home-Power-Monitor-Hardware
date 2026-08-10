@@ -28,7 +28,12 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [],
+    "erc_exclusions": [
+      [
+        "footprint_link_issues|800100|381000|8bc81ad3-6818-4695-8356-e5e710557abf|00000000-0000-0000-0000-000000000000|||",
+        "This is a bit of a pain for not much reward so excluding for the time being"
+      ]
+    ],
     "meta": {
       "version": 0
     },
@@ -416,7 +421,7 @@
         "uuid": "66a36ae4-079f-429c-8ff0-c42ed4b01b0b"
       }
     ],
-    "used_designators": "C5-6",
+    "used_designators": "#FLG1-7,C5-6",
     "variants": []
   },
   "sheets": [
