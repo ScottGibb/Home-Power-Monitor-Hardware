@@ -15,9 +15,9 @@ jobs:
     strategy:
       matrix:
         include:
-          - project: home_power_monitor_hardware
-            schematic: home_power_monitor_hardware/home_power_monitor_hardware.kicad_sch
-            pcb: home_power_monitor_hardware/home_power_monitor_hardware.kicad_pcb
+          - project: lcd_control_unit
+            schematic: lcd_control_unit/lcd_control_unit.kicad_sch
+            pcb: lcd_control_unit/lcd_control_unit.kicad_pcb
 
           - project: power_monitor_protection
             schematic: power_monitor_protection/power_monitor_protection.kicad_sch
