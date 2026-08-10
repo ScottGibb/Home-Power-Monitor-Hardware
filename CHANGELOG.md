@@ -2,14 +2,12 @@
 
 ## 1.0.0 (2026-08-10)
 
-
 ### Features
 
 * add decoupling caps to lcd control unit circuitry ([94e07f7](https://github.com/ScottGibb/Home-Power-Monitor-Hardware/commit/94e07f7d0ba54aff04a4a9031be78eaa59c6b768))
 * add extra caps to power protection circuit ([08c014d](https://github.com/ScottGibb/Home-Power-Monitor-Hardware/commit/08c014dd6e2ba8d6814941bd6afcc1338c83ca09))
 * add power monitor protection circuitry ([b20b24c](https://github.com/ScottGibb/Home-Power-Monitor-Hardware/commit/b20b24cc39bdc00ac2f83bd8a1d6a5016bad95ac))
 * initial commit ([405399e](https://github.com/ScottGibb/Home-Power-Monitor-Hardware/commit/405399e39b66440101d57545f727aed3baf552ca))
-
 
 ### Bug Fixes
 
