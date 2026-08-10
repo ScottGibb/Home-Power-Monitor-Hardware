@@ -3010,7 +3010,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SIP4_B_S-1WR3_MNS"
+		(property "Footprint" "DCDC:SIP4_B_S-1WR3_MNS"
 			(at 80.01 38.1 0)
 			(hide yes)
 			(show_name no)
