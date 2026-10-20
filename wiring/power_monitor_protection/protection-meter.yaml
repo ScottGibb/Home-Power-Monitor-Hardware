@@ -17,8 +17,7 @@ connectors:
       - /PI_ISO_RX (U1 VIA INPUT)
       - /PI_ISO_TX (U1 VOB OUTPUT)
       - GND2
-    notes:
-      Contact numbers follow the schematic.
+    notes: Contact numbers follow the schematic.
   METER:
     type: JSY-MK-194 screw terminals; individual ferrules
     pins: &id001
