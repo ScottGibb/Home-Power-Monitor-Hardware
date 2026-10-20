@@ -1,0 +1,19 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "release-type": "simple",
+  "include-component-in-tag": true,
+  "separate-pull-requests": true,
+  "packages": {
+    "lcd_control_unit": {
+      "component": "lcd-control-unit",
+      "package-name": "LCD Control Unit",
+      "initial-version": "1.0.0"
+    },
+    "power_monitor_protection": {
+      "component": "power-monitor-protection",
+      "package-name": "Power Monitor Protection",
+      "initial-version": "1.0.0"
+    }
+  },
+  "bootstrap-sha": "dbbc1d41bf47f4062af8db637d141049493b6ffe"
+}

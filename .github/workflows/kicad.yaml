@@ -1,73 +1,65 @@
+---
 name: KiCad
-
-on:
+"on":
   push:
     branches: [main, master]
   pull_request:
-    branches: [main, master]
+  workflow_dispatch:
   workflow_call:
+    inputs:
+      ref:
+        description: Commit or release tag to check and export
+        type: string
+        default: ""
+      boards:
+        description: JSON array of board directories to check and export
+        type: string
+        default: '["lcd_control_unit", "power_monitor_protection"]'
+
+permissions:
+  contents: read
 
 jobs:
-  kicad:
-    name: KiCad Actions (${{ matrix.project }})
+  schematic:
+    name: Schematic (${{ matrix.board }})
     runs-on: ubuntu-latest
-
     strategy:
+      fail-fast: false
       matrix:
-        include:
-          - project: lcd_control_unit
-            schematic: lcd_control_unit/lcd_control_unit.kicad_sch
-            pcb: lcd_control_unit/lcd_control_unit.kicad_pcb
-
-          - project: power_monitor_protection
-            schematic: power_monitor_protection/power_monitor_protection.kicad_sch
-            pcb: power_monitor_protection/power_monitor_protection.kicad_pcb
-
+        board: >-
+          ${{ fromJSON(inputs.boards || '["lcd_control_unit", "power_monitor_protection"]') }}
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v7
+      - uses: actions/checkout@v7
         with:
+          ref: ${{ inputs.ref || github.sha }}
           submodules: recursive
-
-      - name: Run KiCad actions
+      - name: Check and export schematic
         uses: actions-for-kicad/kicad-actions@v2-k10.0.6
         with:
-          schematic_file_name: ${{ matrix.schematic }}
-          pcb_file_name: ${{ matrix.pcb }}
-
+          project_file_name: ${{ matrix.board }}/${{ matrix.board }}.kicad_pro
+          schematic_file_name: ${{ matrix.board }}/${{ matrix.board }}.kicad_sch
           run_erc: true
-          # run_drc: true # No PCBS are made for this project
-
           schematic_output_pdf: true
           schematic_output_svg: true
           schematic_output_bom: true
-        #   pcb_output_gerbers_and_drill: true
-
-      - name: Upload schematic
+          schematic_output_netlist: true
+          # PCB checks and fabrication outputs remain disabled.
+      - name: Upload schematic outputs
         uses: actions/upload-artifact@v7
         with:
-          name: schematic-${{ matrix.project }}
-          path: ./schematic.pdf
-
+          name: ${{ matrix.board }}-schematic
+          retention-days: 7
+          if-no-files-found: error
+          path: |
+            schematic.pdf
+            schematics/*.svg
+            bom.csv
+            netlist.net
       - name: Upload ERC report
         if: always()
         uses: actions/upload-artifact@v7
         with:
-          name: erc-${{ matrix.project }}
-          path: ./erc.rpt
-          if-no-files-found: warn
-
-      - name: Upload BOM
-        uses: actions/upload-artifact@v7
-        with:
-          name: bom-${{ matrix.project }}
-          path: ./bom.csv
-          if-no-files-found: warn
-
-    #   - name: Upload Gerbers
-    #     if: always()
-    #     uses: actions/upload-artifact@v7
-    #     with:
-    #       name: gerbers-${{ matrix.project }}
-    #       path: ./gerbers
-    #       if-no-files-found: warn
+          name: ${{ matrix.board }}-erc-report
+          retention-days: 7
+          path: erc.rpt
+          if-no-files-found: error

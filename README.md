@@ -50,7 +50,8 @@ GitHub Actions are configured to help keep the hardware projects consistent:
 
 - **KiCad** runs project automation and publishes generated artifacts such as schematics, ERC reports, and BOM outputs.
 - **MegaLinter** checks repository quality and formatting.
-- **Release Please** prepares releases and uploads generated KiCad assets for tagged versions.
+- **Release Please** creates separate releases for each board and attaches its
+  generated KiCad files.
 - **Dependabot Auto Merge** keeps GitHub Actions and dependency updates moving automatically.
 
 ## 3D Printed Cases and Printed Circuit Boards
