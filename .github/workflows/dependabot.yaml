@@ -11,19 +11,20 @@ permissions:
 
 jobs:
   # ---------------------------------------------------
-  # Auto-merge GitHub Actions updates
+  # Auto-merge GitHub Actions and submodule updates
   # ---------------------------------------------------
-  merge-github-actions:
+  merge-non-semver:
     if: >
       github.actor == 'dependabot[bot]' &&
-      contains(join(github.event.pull_request.labels.*.name), 'github_actions')
+      (contains(join(github.event.pull_request.labels.*.name), 'github_actions') ||
+       contains(join(github.event.pull_request.labels.*.name), 'submodules'))
     runs-on: ubuntu-latest
     steps:
       - uses: fastify/github-action-merge-dependabot@v3
         with:
           github-token: ${{ secrets.dependabot }}
           merge-method: rebase
-          # No target: this avoids semver parsing → GH Actions merge cleanly
+          # No target: action versions and submodule commits need no SemVer filtering
 
   # ---------------------------------------------------
   # Auto-merge minor (and patch) updates for all other ecosystems
@@ -31,7 +32,8 @@ jobs:
   merge-semver-minor:
     if: >
       github.actor == 'dependabot[bot]' &&
-      !contains(join(github.event.pull_request.labels.*.name), 'github_actions')
+      !contains(join(github.event.pull_request.labels.*.name), 'github_actions') &&
+      !contains(join(github.event.pull_request.labels.*.name), 'submodules')
     runs-on: ubuntu-latest
     steps:
       - uses: fastify/github-action-merge-dependabot@v3
