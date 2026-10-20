@@ -10,7 +10,7 @@
 </div>
 <!-- markdownlint-enable MD033 -->
 
-TODO: Picture of Final Hardware Goes Here
+![Finalised Home Power Monitor installation](./docs/final-hardware-front.jpg)
 
 ## Summary
 
