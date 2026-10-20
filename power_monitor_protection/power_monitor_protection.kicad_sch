@@ -2458,7 +2458,7 @@
 		)
 		(uuid "fc4aa289-3b6d-4adf-9f31-955b8df67ed8")
 	)
-	(label "PI_RX"
+	(label "PI_TX"
 		(at 64.77 76.2 0)
 		(effects
 			(font
@@ -2468,7 +2468,7 @@
 		)
 		(uuid "1948ab46-2f37-4732-bc66-b8edec46f1bb")
 	)
-	(label "PI_ISO_RX"
+	(label "PI_ISO_TX"
 		(at 127 76.2 0)
 		(effects
 			(font
@@ -2508,7 +2508,7 @@
 		)
 		(uuid "8493a97d-820c-45a8-8f2b-0ece93b272d3")
 	)
-	(label "PI_TX"
+	(label "PI_RX"
 		(at 64.77 73.66 0)
 		(effects
 			(font
@@ -2558,7 +2558,7 @@
 		)
 		(uuid "f7a80ec4-72cc-4be1-8444-6a28362594a7")
 	)
-	(label "PI_ISO_TX"
+	(label "PI_ISO_RX"
 		(at 127 73.66 0)
 		(effects
 			(font
