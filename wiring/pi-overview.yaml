@@ -92,8 +92,7 @@ connectors:
       - GND
       - BCM21
     ignore_in_bom: true
-    notes:
-      Board component-side view; pin 1 top left. Dupont cable contacts.
+    notes: Board component-side view; pin 1 top left. Dupont cable contacts.
   LCD-J7:
     type: Female JST, 10-way, 2.54 mm
     pins:
@@ -118,8 +117,7 @@ connectors:
       - D7
       - BACKLIGHT (via R1)
       - GND
-    notes:
-      Contact numbers follow the schematic.
+    notes: Contact numbers follow the schematic.
   LCD-J1:
     type: Female JST, 5-way, 2.54 mm
     pins:
@@ -134,8 +132,7 @@ connectors:
       - PIR_SENSOR_TRIGGER
       - TOGGLE_BACKLIGHT_BUTTON
       - GND
-    notes:
-      Contact numbers follow the schematic.
+    notes: Contact numbers follow the schematic.
   PROTECTION-J1:
     type: Female JST, 5-way, 2.54 mm
     pins:
@@ -150,8 +147,7 @@ connectors:
       - /PI_RX (U1 VOA OUTPUT)
       - /PI_TX (U1 VIB INPUT)
       - GND1
-    notes:
-      Contact numbers follow the schematic.
+    notes: Contact numbers follow the schematic.
 cables:
   W_DISPLAY:
     wirecount: 10
