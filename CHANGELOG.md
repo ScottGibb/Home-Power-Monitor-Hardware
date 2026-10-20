@@ -2,7 +2,6 @@
 
 ## [1.0.1](https://github.com/ScottGibb/Home-Power-Monitor-Hardware/compare/v1.0.0...v1.0.1) (2026-08-10)
 
-
 ### Bug Fixes
 
 * **ci:** release please workflow ([8b8f469](https://github.com/ScottGibb/Home-Power-Monitor-Hardware/commit/8b8f4694fc467f58eda05b77cb2a684724306b0a))
