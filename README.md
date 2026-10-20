@@ -44,6 +44,21 @@ Open either KiCad project directly in KiCad:
 
 The custom library content used by the protection board is stored in [`./libraries/`](./libraries/).
 
+## WireViz Development Tools
+
+The locked Nix flake provides WireViz, Graphviz and DejaVu fonts on macOS and
+Linux (Apple Silicon/ARM64 and x86-64):
+
+```sh
+nix develop
+wireviz --version
+dot -V
+```
+
+For a one-off render, use `nix run . -- <WireViz arguments>`. Open VS Code from
+inside `nix develop` so the recommended WireViz Preview extension inherits the
+tools; press F8 to preview a harness and save YAML to refresh it.
+
 ## Automation
 
 GitHub Actions are configured to help keep the hardware projects consistent:
