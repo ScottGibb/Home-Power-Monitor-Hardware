@@ -44,6 +44,13 @@ Open either KiCad project directly in KiCad:
 
 The custom library content used by the protection board is stored in [`./libraries/`](./libraries/).
 
+## Wiring Harnesses
+
+The [wiring documentation](./wiring/README.md) contains WireViz sources for LCD,
+front-panel and protection-board connections. Connector mapping follows the
+saved KiCad schematics, host configuration, build photos and confirmed
+termination types. See its unresolved details before constructing a harness.
+
 ## WireViz Development Tools
 
 The locked Nix flake provides WireViz, Graphviz and DejaVu fonts on macOS and
@@ -65,6 +72,9 @@ GitHub Actions are configured to help keep the hardware projects consistent:
 
 - **KiCad** runs project automation and publishes generated artifacts such as schematics, ERC reports, and BOM outputs.
 - **MegaLinter** checks repository quality and formatting.
+- **WireViz** renders every harness on pushes and pull requests. Wiring has its
+  own release PR, changelog and `wiring-v<version>` tag; its exact tagged sources,
+  README, HTML/PNG/SVG diagrams and TSV BOMs are attached as `wiring.zip`.
 - **Release Please** creates separate releases for each board and attaches its
   generated KiCad files.
 - **Dependabot Auto Merge** keeps GitHub Actions and dependency updates moving automatically.

@@ -13,6 +13,11 @@
       "component": "power-monitor-protection",
       "package-name": "Power Monitor Protection",
       "initial-version": "1.0.0"
+    },
+    "wiring": {
+      "component": "wiring",
+      "package-name": "Wiring Harnesses",
+      "initial-version": "1.0.0"
     }
   },
   "bootstrap-sha": "dbbc1d41bf47f4062af8db637d141049493b6ffe"

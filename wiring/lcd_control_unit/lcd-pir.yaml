@@ -1,0 +1,29 @@
+---
+metadata:
+  title: LCD J3 to AM312 PIR module
+options:
+  fontname: DejaVu Sans
+connectors:
+  LCD-J3:
+    type: Female JST, 3-way, 2.54 mm
+    pins: [1, 2, 3]
+    pinlabels: [+5V, PIR_SIGNAL, GND]
+    notes: Mates with the male PCB header.
+  AM312:
+    type: Female Dupont contacts, 2.54 mm
+    pins: [VCC, OUT, GND]
+    pinlabels: [+5V, 3.3V digital output, GND]
+    notes: Three individual female contacts on the AM312 header.<br/>Supply 5V; OUT at most 3.3V.
+    ignore_in_bom: true
+cables:
+  W1:
+    wirecount: 3
+    colors: [RD, WH, BK]
+    additional_components:
+      - type: Female Dupont contact
+        subtype: 2.54 mm pitch
+        qty: 3
+connections:
+  - - LCD-J3: [1, 2, 3]
+    - W1: [1, 2, 3]
+    - AM312: [VCC, OUT, GND]

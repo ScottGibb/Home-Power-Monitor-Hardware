@@ -43,3 +43,10 @@ megalinter-reports/
 .history
 
 .DS_Store
+
+# WireViz generated outputs
+wiring/output/
+
+# Nix development shells
+.direnv/
+result

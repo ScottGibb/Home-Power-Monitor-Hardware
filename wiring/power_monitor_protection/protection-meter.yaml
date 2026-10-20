@@ -1,0 +1,59 @@
+---
+metadata:
+  title: Protection J2 isolated meter-side interface
+  notes: Isolated meter-side interface. GND2 is separate from host GND1.
+options:
+  fontname: DejaVu Sans
+connectors:
+  PROTECTION-J2:
+    type: Female JST, 4-way, 2.54 mm
+    pins:
+      - 1
+      - 2
+      - 3
+      - 4
+    pinlabels:
+      - /3V3_ISO
+      - /PI_ISO_RX (U1 VIA INPUT)
+      - /PI_ISO_TX (U1 VOB OUTPUT)
+      - GND2
+    notes:
+      Contact numbers follow the schematic.
+  METER:
+    type: JSY-MK-194 screw terminals; individual ferrules
+    pins: &id001
+      - 3V3_ISO
+      - UART_J2_2
+      - UART_J2_3
+      - GND2
+    pinlabels: [3V3_ISO, TX, RX, GND2]
+    notes: Four individually ferruled wires.
+    ignore_in_bom: true
+cables:
+  W1:
+    wirecount: 4
+    type: Cable / logical bundle
+    colors:
+      - BU
+      - ""
+      - ""
+      - BK
+    additional_components:
+      - type: Wire-end ferrule
+        qty: 4
+connections:
+  - - PROTECTION-J2:
+        - 1
+        - 2
+        - 3
+        - 4
+    - W1:
+        - 1
+        - 2
+        - 3
+        - 4
+    - METER:
+        - 3V3_ISO
+        - UART_J2_2
+        - UART_J2_3
+        - GND2

@@ -1,0 +1,28 @@
+---
+metadata:
+  title: LCD J6 contrast potentiometer
+options:
+  fontname: DejaVu Sans
+connectors:
+  LCD-J6:
+    type: Female JST, 3-way, 2.54 mm
+    pins: [1, 2, 3]
+    pinlabels: [+5V, CONTRAST, GND]
+    notes: Mates with the male PCB header.
+  POT:
+    type: Potentiometer solder terminals
+    pins: [HIGH, WIPER, LOW]
+    pinlabels: [+5V, CONTRAST, GND]
+    notes: Wires solder directly to the potentiometer.
+    ignore_in_bom: true
+cables:
+  W1:
+    wirecount: 3
+    colors:
+      - RD
+      - YE
+      - BK
+connections:
+  - - LCD-J6: [1, 2, 3]
+    - W1: [1, 2, 3]
+    - POT: [HIGH, WIPER, LOW]

@@ -1,0 +1,30 @@
+---
+metadata:
+  title: LCD button cable - four identical assemblies
+options:
+  fontname: DejaVu Sans
+connectors:
+  PCB:
+    type: Female JST, 2-way, 2.54 mm
+    pins: [1, 2]
+    pinlabels: [SIGNAL, GND]
+    notes: Mates with the male PCB header.
+  SIGNAL:
+    style: simple
+    show_name: true
+    type: Female spade terminal
+    subtype: Approx. 2 mm
+  GROUND:
+    style: simple
+    show_name: true
+    type: Female spade terminal
+    subtype: Approx. 2 mm
+cables:
+  W1:
+    wirecount: 2
+    colors: [WH, BK]
+    notes: Make 4 identical cables; BOM shows one.
+connections:
+  - - PCB: [1, 2]
+    - W1: [1, 2]
+    - [SIGNAL, GROUND]

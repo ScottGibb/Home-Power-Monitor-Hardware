@@ -16,6 +16,8 @@ jobs:
     outputs:
       releases_created: ${{ steps.release.outputs.releases_created }}
       paths_released: ${{ steps.release.outputs.paths_released }}
+      wiring_released: ${{ steps.route.outputs.wiring }}
+      wiring_tag: ${{ steps.release.outputs['wiring--tag_name'] }}
       boards_released: ${{ steps.route.outputs.boards }}
       lcd_tag: ${{ steps.release.outputs['lcd_control_unit--tag_name'] }}
       protection_tag: >-
@@ -39,6 +41,7 @@ jobs:
             const boards = paths.filter(path =>
               ['lcd_control_unit', 'power_monitor_protection'].includes(path));
             core.setOutput('boards', JSON.stringify(boards));
+            core.setOutput('wiring', String(paths.includes('wiring')));
 
   kicad:
     needs: release
@@ -93,3 +96,27 @@ jobs:
             release-assets/schematic/bom.csv
             release-assets/schematic/netlist.net
             release-assets/erc-report/erc.rpt
+
+  wireviz:
+    needs: release
+    if: needs.release.outputs.wiring_released == 'true'
+    uses: ./.github/workflows/wireviz.yaml
+    with:
+      ref: ${{ needs.release.outputs.wiring_tag }}
+
+  attach-wiring-outputs:
+    needs: [release, wireviz]
+    if: needs.release.outputs.wiring_released == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download wiring outputs
+        uses: actions/download-artifact@v8
+        with:
+          name: wiring-diagrams
+          path: release-assets/wiring
+      - name: Attach wiring package to the wiring release
+        uses: softprops/action-gh-release@v3
+        with:
+          tag_name: ${{ needs.release.outputs.wiring_tag }}
+          fail_on_unmatched_files: true
+          files: release-assets/wiring/wiring.zip
