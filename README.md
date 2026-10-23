@@ -83,8 +83,10 @@ GitHub Actions are configured to help keep the hardware projects consistent:
 
 Due to funding, PCB layouts were never produced for these schematics. This was largely because the boards themselves were too simple to justify manufacturing, so veroboard was used instead. 3D-printed cases were produced, however, and can be found on Printables and Thingiverse.
 
-- TODO: Thingiverse Link
-- TODO: Printables Link
+| Model                      | Printables                                             | Thingiverse                                              |
+| -------------------------- | ------------------------------------------------------ | -------------------------------------------------------- |
+| LCD Control Unit           | [Printables](https://www.printables.com/model/1886187) | [Thingiverse](https://www.thingiverse.com/thing:7425308) |
+| Power Monitor Isolator Box | [Printables](https://www.printables.com/model/1885924) | [Thingiverse](https://www.thingiverse.com/thing:7425222) |
 
 ## Useful Links
 
